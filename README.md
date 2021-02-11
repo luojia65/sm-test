@@ -1,0 +1,5 @@
+# sm-test
+
+## License
+
+WTFPL
