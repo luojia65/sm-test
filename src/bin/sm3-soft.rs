@@ -1,3 +1,5 @@
+// sm3信息摘要算法实现
+
 use core::mem::size_of;
 
 // 按SM3标准填充数据
@@ -123,6 +125,8 @@ fn iter_compress(msg: &mut [u8]) -> [u32; 8] {
 }
 
 // 完整的sm3摘要算法
+//
+// sm3算法最高支持2^64个位（2^61个字节）的消息输入。如果不满足，函数会panic
 fn sm3(input: &[u8]) -> [u32; 8] {
     let mut filled = Vec::new();
     fill_message(input, &mut filled);
